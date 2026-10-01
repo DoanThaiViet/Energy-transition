@@ -510,6 +510,13 @@ body.hero-active .deckfoot__r{ color:#fff; }
 .hero2 .hero__word{ margin:.6rem 0 .5rem; font-size:clamp(2.2rem,4.3vw,5rem); }
 .hero2 .hero__amp{ font-size:clamp(1.1rem,1.7vw,2rem); max-width:30ch; }
 .hero2 .hero__by{ justify-content:flex-start; }
+.hero2--c{ display:flex; align-items:center; justify-content:center; text-align:center; position:relative; min-height:68vh; }
+.hero2--c .hero__logobox{ margin:0 auto 1rem; }
+.hero2--c .hero__word{ font-size:clamp(2.8rem,7vw,8rem); margin:.4rem 0 0; }
+.hero2__t{ position:relative; z-index:2; }
+.orbit.orbit--bg{ position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:min(92vh,80vw); opacity:.5; z-index:1; pointer-events:none; }
+.orbit--bg .orbit__lbl{ display:none; }
+
 .hero__sub{ font-family:var(--font-display); font-weight:600; color:rgba(255,255,255,.85); font-size:clamp(.85rem,.8vw + .3rem,1.15rem); margin-top:1rem; text-shadow:0 1px 4px rgba(0,0,0,.6); }
 .orbit{ position:relative; aspect-ratio:1; width:min(100%,62vh); margin-inline:auto; }
 .orbit canvas{ position:absolute; inset:0; width:100% !important; height:100% !important; }
@@ -580,6 +587,72 @@ body.hero-active .deckfoot__r{ color:#fff; }
   .prow{ grid-template-columns:1fr; gap:.35rem; }
   .evr{ grid-template-columns:1fr; gap:.3rem; } .evr__p{ justify-self:start; }
 }
+
+/* ===== v4: question-led deck · evidence tags, source footers, 4-column tables ===== */
+.tag{ display:inline-block; font-family:var(--font-display); font-weight:800; letter-spacing:.08em; text-transform:uppercase; font-size:clamp(.62rem,.42vw + .36rem,.84rem); border-radius:6px; padding:.12rem .42rem; line-height:1.2; margin-right:.35rem; vertical-align:.1em; }
+.tag--f{ color:#fff; background:var(--pvep-navy); }
+.tag--c{ color:#fff; background:var(--success); }
+.tag--j{ color:#fff; background:#B45309; }
+.tag--p{ color:#fff; background:#7c3aed; }
+.qeb{ font-family:var(--font-display); font-weight:800; letter-spacing:.16em; text-transform:uppercase; color:var(--pvep-blue); font-size:clamp(.75rem,.55vw + .4rem,1.05rem); }
+.s-title{ max-width:40ch; }
+.prow{ grid-template-columns:clamp(8.5rem,11vw,12.5rem) 1fr; padding:.6rem .95rem; }
+.prow__v{ gap:.28rem; }
+.prow__v span{ display:block; }
+.srcline{ margin-top:clamp(.45rem,1.2vh,.8rem); font-size:clamp(.66rem,.4vw + .38rem,.86rem); color:var(--ink-500); line-height:1.4; }
+.srcline a{ color:var(--ink-500); text-decoration:underline; text-decoration-color:rgba(100,116,139,.4); }
+.srcline b{ color:var(--ink-600); }
+.legend{ display:flex; flex-wrap:wrap; gap:.4rem .8rem; justify-content:center; margin:-.2rem 0 .7rem; font-size:clamp(.72rem,.45vw + .4rem,.95rem); color:var(--ink-600); }
+/* S2 allocation rows */
+.pf{ grid-template-columns:auto 1fr; }
+.donut{ width:clamp(220px,min(28vw,46vh),480px); }
+.arow{ display:grid; grid-template-columns:2.4em 1fr; gap:.7rem; align-items:center; background:#fff; border:1px solid var(--ac-line); border-left:6px solid var(--c); border-radius:12px; padding:.42rem .8rem; cursor:pointer; text-align:left; transition:all .25s; width:100%; font:inherit; }
+.arow b{ font-family:var(--font-display); font-weight:800; font-size:1.5em; color:var(--c); text-align:center; line-height:1; }
+.arow span{ display:block; font-family:var(--font-display); font-weight:800; color:var(--pvep-navy); font-size:clamp(.82rem,.55vw + .4rem,1.08rem); line-height:1.25; }
+.arow small{ display:block; font-size:clamp(.8rem,.5vw + .4rem,1.02rem); color:var(--ink-600); line-height:1.3; margin-top:.1rem; }
+.arow:hover, .arow.on{ transform:translateX(4px); box-shadow:0 10px 26px rgba(0,131,199,.16); }
+.alist{ display:flex; flex-direction:column; gap:.35rem; }
+.tradeoff{ display:grid; grid-template-columns:1fr 1fr; gap:.5rem; margin-top:.5rem; }
+.tradeoff div{ border-radius:12px; padding:.5rem .75rem; font-size:clamp(.85rem,.55vw + .4rem,1.1rem); line-height:1.35; color:var(--ink-700); background:#fff; border:1px solid var(--ac-line); }
+.tradeoff b{ display:block; font-family:var(--font-display); font-size:.78em; letter-spacing:.12em; text-transform:uppercase; margin-bottom:.1rem; }
+/* S4 four boxes */
+.four{ display:grid; grid-template-columns:repeat(4,1fr); gap:.45rem; }
+.four div{ background:#fff; border:1px solid var(--ac-line); border-top:4px solid var(--pvep-blue); border-radius:12px; padding:.45rem .65rem; font-size:clamp(.82rem,.52vw + .4rem,1.05rem); line-height:1.3; color:var(--ink-700); }
+.four b{ display:block; font-family:var(--font-display); color:var(--pvep-navy); font-size:1.02em; margin-bottom:.1rem; }
+/* S6 goals */
+.goal3{ display:grid; grid-template-columns:repeat(3,1fr); gap:var(--gap); }
+.goal3 .panel{ gap:.4rem; }
+.goal3 p{ font-size:clamp(.88rem,.58vw + .4rem,1.12rem) !important; }
+.pchips{ display:flex; flex-wrap:wrap; gap:.3rem; }
+.pchips em{ font-style:normal; font-family:var(--font-display); font-weight:800; color:#fff; border-radius:7px; padding:.12rem .45rem; font-size:clamp(.72rem,.45vw + .4rem,.95rem); }
+/* 4-column tables (S7, S8) */
+.t4{ display:grid; border-radius:14px; overflow:hidden; border:1px solid var(--ac-line); background:#fff; font-size:clamp(.8rem,.5vw + .4rem,1.04rem); line-height:1.33; }
+.t4 > div{ padding:.45rem .65rem; border-bottom:1px solid var(--ac-line); color:var(--ink-700); }
+.t4 > .h{ font-family:var(--font-display); font-weight:800; color:#fff; background:var(--pvep-navy); border-bottom:0; letter-spacing:.04em; }
+.t4 > .k{ font-family:var(--font-display); font-weight:800; color:var(--pvep-navy); background:var(--bg-100); }
+.t4 > .g{ color:#9A4A06; background:rgba(217,119,6,.06); }
+.t4 > .r{ color:var(--success); background:rgba(0,176,80,.05); }
+.t4--cap{ grid-template-columns:1fr 1.5fr 1fr 1.25fr; }
+.t4--risk{ grid-template-columns:1fr 1.35fr 1.1fr 1.45fr; }
+.notes2{ display:grid; grid-template-columns:1fr 1fr; gap:.5rem; margin-top:.5rem; }
+/* S10 glass on dark */
+.glass3{ display:grid; grid-template-columns:1.05fr 1.15fr 1fr; gap:var(--gap); text-align:left; }
+.glass{ background:rgba(10,42,74,.58); border:1px solid rgba(255,255,255,.25); border-radius:16px; padding:clamp(.75rem,1.2vw,1.2rem); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); color:#E2E8F0; display:flex; flex-direction:column; gap:.4rem; }
+.glass h3{ font-family:var(--font-display); font-weight:800; color:#7FE0A8; font-size:clamp(.78rem,.55vw + .4rem,1.05rem); letter-spacing:.12em; text-transform:uppercase; }
+.glass li{ font-size:clamp(.84rem,.52vw + .42rem,1.08rem); line-height:1.36; list-style:none; position:relative; padding-left:1rem; }
+.glass li::before{ content:""; position:absolute; left:0; top:.55em; width:6px; height:6px; border-radius:50%; background:#7FE0A8; }
+.glass li b{ color:#fff; }
+.glass .lbl{ font-size:clamp(.7rem,.42vw + .38rem,.9rem); color:#FFD08A; font-weight:700; }
+.scn{ display:grid; grid-template-columns:1fr auto auto auto; gap:.15rem .55rem; font-size:clamp(.82rem,.5vw + .42rem,1.05rem); align-items:center; }
+.scn .h{ font-family:var(--font-display); font-weight:800; color:#7FE0A8; font-size:.85em; }
+.scn b{ font-family:var(--font-display); color:#fff; text-align:right; }
+.scn .up{ color:#7FE0A8; font-weight:800; } .scn .dn{ color:#FFB547; font-weight:800; }
+.final-line{ text-align:center; font-family:var(--font-display); font-weight:700; color:#fff; font-size:clamp(1rem,1.5vw,1.6rem); line-height:1.35; max-width:52ch; margin:clamp(.7rem,2vh,1.3rem) auto 0; text-shadow:0 1px 8px rgba(0,0,0,.6); }
+.final-line b{ color:#7FE0A8; }
+@media (max-width:820px){
+  .tradeoff,.four,.goal3,.glass3,.notes2{ display:flex !important; flex-direction:column; }
+  .t4--cap,.t4--risk{ grid-template-columns:1fr; } .t4 > .h{ display:none; } .t4 > .k{ margin-top:.3rem; }
+}
 </style>
 </head>
 <body>
@@ -591,322 +664,305 @@ body.hero-active .deckfoot__r{ color:#fff; }
 <nav class="rail" aria-label="Chapters">
   <div class="rail__brand"><img class="rail__logo" src="data:image/png;base64,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" alt="Petrovietnam" /><span class="rail__title">2035<br><small style="font-weight:600;font-size:.7rem;color:var(--ink-500)">Strategy</small></span></div>
   <div class="rail__sub">Strategic investment priorities</div>
-  <div class="rail__item" data-chapter="0"><span class="dot"></span><span class="rail__num">I</span>Recommendation</div>
-  <div class="rail__item" data-chapter="1"><span class="dot"></span><span class="rail__num">II</span>100-point portfolio</div>
-  <div class="rail__item" data-chapter="2"><span class="dot"></span><span class="rail__num">III</span>Two priorities</div>
-  <div class="rail__item rail__item--sub" data-chapter="2" data-goto="s-p1"><span class="dot"></span>Oil &amp; gas · 35</div>
-  <div class="rail__item rail__item--sub" data-chapter="2" data-goto="s-p2"><span class="dot"></span>Power · 20</div>
-  <div class="rail__item" data-chapter="3"><span class="dot"></span><span class="rail__num">IV</span>What we hold back</div>
-  <div class="rail__item" data-chapter="4"><span class="dot"></span><span class="rail__num">V</span>Strategic fit</div>
-  <div class="rail__item" data-chapter="5"><span class="dot"></span><span class="rail__num">VI</span>Risks &amp; evidence</div>
-  <div class="rail__item rail__item--sub" data-chapter="5" data-goto="s-asm"><span class="dot"></span>Assumptions</div>
-  <div class="rail__item rail__item--sub" data-chapter="5" data-goto="s-ev"><span class="dot"></span>Course evidence</div>
-  <div class="rail__item" data-chapter="6"><span class="dot"></span><span class="rail__num">VII</span>Closing</div>
+  <div class="rail__item" data-chapter="0"><span class="dot"></span><span class="rail__num">1</span>Recommendation</div>
+  <div class="rail__item" data-chapter="1"><span class="dot"></span><span class="rail__num">2</span>Q1 · Allocation</div>
+  <div class="rail__item" data-chapter="2"><span class="dot"></span><span class="rail__num">3</span>Q2 · Priority 1: oil &amp; gas</div>
+  <div class="rail__item" data-chapter="3"><span class="dot"></span><span class="rail__num">4</span>Q2 · Priority 2: power</div>
+  <div class="rail__item" data-chapter="4"><span class="dot"></span><span class="rail__num">5</span>Q3–4 · What we limit</div>
+  <div class="rail__item" data-chapter="5"><span class="dot"></span><span class="rail__num">6</span>Q5 · Security &amp; emissions</div>
+  <div class="rail__item" data-chapter="6"><span class="dot"></span><span class="rail__num">7</span>Q6 · Capabilities</div>
+  <div class="rail__item" data-chapter="7"><span class="dot"></span><span class="rail__num">8</span>Q7 · Assumptions &amp; risks</div>
+  <div class="rail__item" data-chapter="8"><span class="dot"></span><span class="rail__num">9</span>Q8 · Course evidence</div>
+  <div class="rail__item" data-chapter="9"><span class="dot"></span><span class="rail__num">10</span>Q4 · What would change it</div>
 </nav>
 
 <div class="counter"><span id="cur">1</span><span class="sep">/</span><span id="tot">10</span></div>
-<button class="nbtn" id="nbtn" type="button" title="Speaker notes (N)">Notes · N</button>
-<aside class="notes" id="notes" aria-live="polite"><div class="notes__h"><b id="notesT">Speaker notes</b><span id="notesTime"></span></div><div id="notesB"></div></aside>
-<div class="hint">← → navigate · N speaker notes</div>
+<div class="hint">← → navigate</div>
 <div class="deckfoot" aria-hidden="true">
-  <span class="deckfoot__l">PetroVietnam 2035 · Strategic Investment Priorities</span>
+  <span class="deckfoot__l"></span>
   <span class="deckfoot__r"><span id="footPage">1</span> / <span id="footTot">10</span></span>
 </div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
   <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15M13 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-  <symbol id="i-down" viewBox="0 0 24 24"><path d="M3 5l6 6 4-4 8 9M21 10v6h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
 </defs></svg>
 
-<!-- ========== 1 · HERO (Three.js: 100 points) ========== -->
-<section class="slide" id="s-hero" data-chapter="0" data-hero="1">
+<!-- ========== 1 · WHAT DO WE RECOMMEND? ========== -->
+<section class="slide" id="s-rec" data-chapter="0" data-hero="1">
   <div class="video-bg-wrap" aria-hidden="true">
     <video id="heroVid" autoplay muted loop playsinline><source src="../_shared/offshore-motion.mp4" type="video/mp4" /></video>
   </div>
   <button class="vtoggle" id="vtoggle" type="button" aria-label="Pause / play background video"><svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
-  <div class="slide-content"><div class="wrap hero2">
-    <div>
+  <div class="slide-content"><div class="wrap hero2 hero2--c">
+    <div class="orbit orbit--bg" id="orbit" aria-hidden="true"></div>
+    <div class="hero2__t">
     <div class="hero__logobox ac-reveal" style="--i:0"><img class="hero__logo" src="data:image/png;base64,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" alt="Petrovietnam logo" /></div>
-      <div class="hero__eb ac-reveal" style="--i:1">Strategic Investment Priorities</div>
       <h1 class="hero__word ac-reveal ac-reveal--zoom" style="--i:2">PETROVIETNAM <span>2035</span></h1>
-      <div class="hero__amp ac-reveal" style="--i:4">Keep oil and gas strong. Use its cash to build power, CO₂ storage and new services.</div>
-      <div class="hero__sub ac-reveal" style="--i:5">Applying the week’s lessons to a real strategic decision</div>
-    </div>
-    <div class="ac-reveal ac-reveal--zoom" style="--i:3">
-      <div class="orbit" id="orbit" role="img" aria-label="100 points shown as 100 dots grouped into six investment areas">
-        <div class="orbit__c"><b>100</b><span>points</span></div>
-      </div>
     </div>
   </div></div>
 </section>
 
-<!-- ========== 2 · RECOMMENDATION ========== -->
-<section class="slide" id="s-rec" data-chapter="0">
+<!-- ========== 2 · HOW DO WE ALLOCATE 100 POINTS? ========== -->
+<section class="slide" id="s-alloc" data-chapter="1">
   <div class="slide-content"><div class="wrap">
     <div class="head-center">
-      <div class="eyebrow ac-reveal">Our recommendation</div>
-      <h2 class="s-title ac-reveal" style="--i:1">Oil and gas supplies Vietnam and <span class="neo">funds the next investments</span></h2>
-    </div>
-    <div class="ask ac-reveal" style="--i:2">
-      <div class="ask__k">Management asked for a portfolio that</div>
-      <span><b>1</b>Supports reliable, affordable energy</span><span><b>2</b>Protects existing businesses</span><span><b>3</b>Reduces emissions</span><span><b>4</b>Avoids unrealistic assumptions</span><span><b>5</b>Builds competitive advantage</span>
-    </div>
-    <div class="flow">
-      <div class="fnode fnode--base ac-reveal ac-reveal--left" style="--i:3">
-        <div class="fnode__k">Keep strong</div>
-        <div class="big">35</div>
-        <div class="fnode__t">Existing oil &amp; gas production and infrastructure</div>
-        <p>Supplies Vietnam and earns the cash.</p>
-      </div>
-      <div class="flow__arrow ac-pop" style="--i:5"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></div>
-      <div class="fnode ac-reveal" style="--i:6">
-        <div class="fnode__k">Build with that cash</div>
-        <div class="fnode__row"><i></i>Power projects<b>20</b></div>
-        <div class="fnode__row"><i style="background:var(--info)"></i>Selected CO₂ storage projects<b>15</b></div>
-        <div class="fnode__row"><i style="background:#0f766e"></i>New services<b>15</b></div>
-      </div>
-      <div class="flow__arrow ac-pop" style="--i:8"><svg viewBox="0 0 24 24"><use href="#i-arrow"/></svg></div>
-      <div class="fnode ac-reveal" style="--i:9">
-        <div class="fnode__k">At the same time</div>
-        <div class="fnode__row fnode__row--g"><i></i>Cut operating emissions<b>10</b></div>
-        <div class="fnode__row"><i style="background:var(--caution)"></i>Test hydrogen on a small scale<b>5</b></div>
-      </div>
-    </div>
-    <div class="callout ac-reveal" style="--i:11; margin-top:clamp(1rem,3vh,2rem); font-size:var(--small-size)">We recommend keeping oil and gas strong enough to supply Vietnam and earn cash, then using that cash to build power projects, develop selected CO₂ storage projects and grow new services, while cutting operating emissions and testing hydrogen on a small scale.</div>
-  </div></div>
-</section>
-
-<!-- ========== 3 · PORTFOLIO ========== -->
-<section class="slide" id="s-pf" data-chapter="1">
-  <div class="slide-content"><div class="wrap">
-    <div class="head-center">
-      <div class="eyebrow ac-reveal">Team portfolio allocation</div>
-      <h2 class="s-title ac-reveal" style="--i:1">100 points: <span class="neo">oil and gas first</span>, power second</h2>
+      <div class="qeb ac-reveal">Question 1</div>
+      <h2 class="s-title ac-reveal" style="--i:1">How will we allocate the 100 investment points?</h2>
     </div>
     <div class="pf">
       <div class="donut ac-reveal ac-reveal--zoom" style="--i:2" id="donut">
         <svg viewBox="0 0 120 120" id="donutSvg" role="img" aria-label="Portfolio allocation donut chart"></svg>
-        <div class="donut__c"><b data-count-to="100">100</b><span>points allocated</span></div>
+        <div class="donut__c"><b data-count-to="100">100</b><span>points</span></div>
       </div>
-      <div class="pf__side">
-        <div class="pf__list" id="pfList"></div>
-        <div class="pf__detail" id="pfDetail">
-          <div class="pf__dh"><span class="pf__dn" id="pfN"></span><span class="pf__dt" id="pfT"></span></div>
-          <div class="pf__dw" id="pfW"></div>
-        </div>
-        <div class="macc__cap ac-reveal" style="--i:6; text-align:left">Points represent investment capacity and management attention, not a specific amount of money.</div>
+      <div class="pf__side" style="gap:.4rem">
+        <div class="alist" id="pfList"></div>
+        <div class="callout ac-reveal" style="--i:6; font-size:clamp(.85rem,.55vw + .4rem,1.08rem); padding:.55rem .9rem"><b>Our recommendation:</b> fund oil and gas where the whole chain is ready, and grow power and services step by step. <b>Trade-off:</b> money and attention are limited, so every point for oil and gas is a point we cannot give to new businesses today.</div>
       </div>
     </div>
   </div></div>
 </section>
 
-<!-- ========== 4 · PRIORITY 1 ========== -->
+<!-- ========== 3 · FIRST PRIORITY ========== -->
 <section class="slide" id="s-p1" data-chapter="2">
   <div class="slide-content"><div class="wrap">
     <div class="head-center">
-      <div class="eyebrow ac-reveal">Priority 1</div>
-      <h2 class="s-title ac-reveal" style="--i:1">Existing oil &amp; gas <span class="neo">production and infrastructure</span></h2>
+      <div class="qeb ac-reveal">Question 2 · Priority 1 <span class="pts pts--n">35 points</span></div>
+      <h2 class="s-title ac-reveal" style="--i:1">Which two areas receive the highest priority, and why?</h2>
     </div>
     <div class="prio">
       <div class="prio__num ac-reveal ac-reveal--left" style="--i:2; background:linear-gradient(160deg,var(--pvep-navy),#13426e)">
-        <div><b data-count-to="35">35</b><small>POINTS</small></div>
-        <span>Improve existing fields and pipelines, and use their cash to fund new energy projects.</span>
+        <div><b data-count-to="35">35</b><small>EXISTING OIL &amp; GAS</small></div>
+        <span>Example: Block B–O Mon. A gas field, a pipeline and power plants that need each other.</span>
       </div>
       <div class="prio__rows">
         <div class="prow ac-reveal" style="--i:3"><div class="prow__k">Why it matters for Vietnam</div>
-          <div class="prow__v"><span>Vietnam still needs oil and gas. <b>Domestic production</b> helps the country rely less on imports.</span><span>If investment stops too early, output may fall <b>before other energy sources are ready</b>.</span></div></div>
+          <div class="prow__v"><span>Gas from Block B is planned for four power plants at O Mon, almost 3,800 MW in total (one of 660 MW, three of 1,050 MW). This is electricity from Vietnam’s own gas.</span></div></div>
         <div class="prow ac-reveal" style="--i:4"><div class="prow__k prow__k--n">Why PetroVietnam can compete</div>
-          <div class="prow__v"><div class="chips"><span class="chip">Knows its fields</span><span class="chip">People</span><span class="chip">Pipelines</span><span class="chip">Facilities</span></div><span>Use that experience to improve existing fields and focus on projects with <b>reasonable costs and returns</b>.</span></div></div>
-        <div class="prow ac-reveal" style="--i:5"><div class="prow__k prow__k--g">Course evidence<br><small style="letter-spacing:.04em; text-transform:none; font-weight:700; color:var(--ink-500)">Lesson 3.2</small></div>
-          <div class="prow__v"><span>Look at energy supply and cost together. Assets can <b>lose value as demand changes</b>.</span><span>So we keep investing in oil and gas, but <b>check each project</b> rather than assume every field deserves more money.</span></div></div>
+          <div class="prow__v"><span>We are in every part of the chain. Petrovietnam and PVEP sell the gas with partners. PV GAS moves it by pipeline. Petrovietnam is the investor in O Mon III and IV.</span></div></div>
+        <div class="prow ac-reveal" style="--i:5"><div class="prow__k prow__k--g">Course evidence</div>
+          <div class="prow__v"><span>Lesson 3.2 (slides 18, 22): many gas fields never make money because there is <b>no pipeline</b> or <b>no buyer</b>, not because there is no gas.</span></div></div>
+        <div class="prow ac-reveal" style="--i:6"><div class="prow__k" style="color:#B45309">Why timing matters</div>
+          <div class="prow__v"><span>First gas is due no later than Q3 2027. But O Mon IV is due in December 2028, O Mon II in late 2029 and O Mon III only in May 2030. Only O Mon I (660 MW) is due to take the gas from 2027.</span><span>If one part is late, the other parts wait and earn nothing. So we fund a part only when the next part is ready and a buyer has signed. <b>We do not fund every oil and gas project.</b></span></div></div>
       </div>
     </div>
   </div></div>
 </section>
 
-<!-- ========== 5 · PRIORITY 2 ========== -->
-<section class="slide" id="s-p2" data-chapter="2">
+<!-- ========== 4 · SECOND PRIORITY ========== -->
+<section class="slide" id="s-p2" data-chapter="3">
   <div class="slide-content"><div class="wrap">
     <div class="head-center">
-      <div class="eyebrow ac-reveal">Priority 2</div>
-      <h2 class="s-title ac-reveal" style="--i:1">Power generation, <span class="neo">renewables and energy storage</span></h2>
+      <div class="qeb ac-reveal">Question 2 · Priority 2 <span class="pts">20 points</span></div>
+      <h2 class="s-title ac-reveal" style="--i:1">Which two areas receive the highest priority, and why?</h2>
     </div>
     <div class="prio">
       <div class="prio__num ac-reveal ac-reveal--left" style="--i:2; background:linear-gradient(160deg,var(--pvep-blue),#005f91)">
-        <div><b data-count-to="20">20</b><small>POINTS</small></div>
-        <span>Check buyers, grid access and expected income before investing.</span>
+        <div><b data-count-to="20">20</b><small>POWER, RENEWABLES, STORAGE</small></div>
+        <span>Example: Nhon Trach 3 &amp; 4. PV GAS brings the fuel. PV Power owns the plants.</span>
       </div>
       <div class="prio__rows">
         <div class="prow ac-reveal" style="--i:3"><div class="prow__k">Why it matters for Vietnam</div>
-          <div class="prow__v"><span>Vietnam needs <b>more reliable electricity</b>. We look at gas power, renewables and storage together.</span><span>A project only helps if it can <b>deliver power when needed</b> and connect to the grid.</span></div></div>
+          <div class="prow__v"><span>Vietnam’s own gas is not always enough. In late 2025, PV Power planned extra LNG for Nhon Trach 1 &amp; 2. In 2026, PV GAS signed Vietnam’s first multi-year LNG deal (Shell, about 400,000 tonnes a year, 2027–2031).</span></div></div>
         <div class="prow ac-reveal" style="--i:4"><div class="prow__k prow__k--n">Why PetroVietnam can compete</div>
-          <div class="prow__v"><span>Gas facilities, offshore experience and people who manage large projects. We build on those for:</span><div class="focus" style="flex-direction:row; flex-wrap:wrap"><div>Gas power</div><div>Offshore wind</div><div>Projects for industrial customers</div></div></div></div>
-        <div class="prow ac-reveal" style="--i:5"><div class="prow__k prow__k--g">Course evidence<br><small style="letter-spacing:.04em; text-transform:none; font-weight:700; color:var(--ink-500)">Lesson 2.2 · LCOE</small></div>
-          <div class="prow__v"><span>A low production cost is not enough. We also ask:</span><div class="qs"><span>What price can we sell at?</span><span>How often does the plant run?</span><span>Can the grid take the power?</span></div></div></div>
+          <div class="prow__v"><span>The group covers the whole path. PV GAS brings in LNG at Thi Vai and has a 25-year deal to supply both plants. PV Power owns the plants and sells the power to EVN. Both plants started selling power on 5 January 2026.</span></div></div>
+        <div class="prow ac-reveal" style="--i:5"><div class="prow__k prow__k--g">Course evidence</div>
+          <div class="prow__v"><span>Lessons 2.2 (slide 14) and 4.2 (slide 22): a low average cost per MWh is not enough. Gas power loses money if gas is too expensive or nobody buys the power.</span>
+            <div class="four"><div><b>Fuel supply</b>Is there enough LNG?</div><div><b>Fuel price</b>Does LNG cost less than the power earns?</div><div><b>Power sales</b>Who buys the power, and on what terms?</div><div><b>Running hours</b>How many hours does the plant run?</div></div></div></div>
+        <div class="prow ac-reveal" style="--i:6"><div class="prow__k" style="color:#B45309">Limit of this example</div>
+          <div class="prow__v"><span>An LNG plant does not always make money, and it still burns gas. It also tells us nothing about solar, wind or batteries. For those we ask: can the grid take the power, is there a signed buyer, and can we do the work well?</span></div></div>
       </div>
     </div>
   </div></div>
 </section>
 
-<!-- ========== 6 · HOLD BACK: HYDROGEN ========== -->
-<section class="slide" id="s-h2" data-chapter="3">
+<!-- ========== 5 · WHAT DO WE DEFER, LIMIT OR REJECT? ========== -->
+<section class="slide" id="s-limit" data-chapter="4">
   <div class="slide-content"><div class="wrap">
     <div class="head-center">
-      <div class="eyebrow ac-reveal">Choices and tradeoffs <span class="pts pts--a">5 points</span></div>
-      <h2 class="s-title ac-reveal" style="--i:1">We delay large <span class="neo-g">green hydrogen plants for export</span></h2>
+      <div class="qeb ac-reveal">Questions 3 &amp; 4 · Hydrogen, ammonia, low-carbon fuels <span class="pts pts--a">5 points</span></div>
+      <h2 class="s-title ac-reveal" style="--i:1">Which area will we limit, and what would make us reconsider?</h2>
     </div>
     <div class="tl ac-reveal" style="--i:2">
-      <div><svg class="ico" style="color:#fff"><use href="#i-clock"/></svg><span><b>Now</b> · <small>5 points for trials and projects with real customer interest</small></span></div>
-      <div><svg class="ico" style="color:#fff"><use href="#i-arrow"/></svg><span><b>Later</b> · <small>invest more when demand and returns are clear</small></span></div>
+      <div><svg class="ico" style="color:#fff"><use href="#i-clock"/></svg><span><b>Not now</b> · <small>a large green hydrogen plant for export</small></span></div>
+      <div><svg class="ico" style="color:#fff"><use href="#i-arrow"/></svg><span><b>5 points</b> · <small>small studies and trials with a real buyer</small></span></div>
     </div>
-    <div class="dep" style="grid-template-columns:1fr 1fr 1.15fr">
+    <div class="dep" style="grid-template-columns:1fr 1fr 1.1fr">
       <div class="panel panel--top ac-reveal" style="--i:3">
-        <div class="panel__k">Reason for the decision</div>
-        <p>A large plant needs <b>affordable power, transport and buyers at the same time</b>. We do not yet have enough certainty on these points to commit much more money.</p>
-        <p>We would rather learn with a small project first.</p>
+        <div class="panel__k">Why we hold back</div>
+        <ul class="rlist">
+          <li>Government support does not mean someone will buy (Lesson 3.3, slide 14).</li>
+          <li>New hydrogen markets may grow, but nobody knows yet (slide 19).</li>
+        </ul>
+        <div class="panel__k panel__k--a" style="margin-top:.3rem">Assumption we cannot accept</div>
+        <p>That buyers will come and pay a higher price just because the government supports hydrogen.</p>
       </div>
       <div class="panel panel--top ac-reveal" style="--i:4">
-        <div class="panel__k panel__k--a">Main weakness</div>
-        <ul class="rlist rlist--a">
-          <li>The plant may cost too much to run.</li>
-          <li>Buyers may not pay enough for the hydrogen.</li>
-          <li>Low operating hours or expensive transport could make it lose money.</li>
-        </ul>
+        <div class="panel__k panel__k--a">What we give up by waiting</div>
+        <p>We may learn later than others, and we may miss an export market if it grows. The 5 points keep small trials going, so we still learn.</p>
       </div>
       <div class="panel panel--top ac-reveal" style="--i:5">
-        <div class="panel__k panel__k--g">We reconsider when · click each one</div>
+        <div class="panel__k panel__k--g">We add more points when · click</div>
         <div class="sw-list" id="swList" style="grid-template-columns:1fr">
-          <button class="sw" type="button"><span class="sw__k"></span>Buyers sign long-term contracts</button>
-          <button class="sw" type="button"><span class="sw__k"></span>Power, equipment and transport costs leave a reasonable return</button>
-          <button class="sw" type="button"><span class="sw__k"></span>Standards for low-carbon hydrogen are agreed</button>
+          <button class="sw" type="button"><span class="sw__k"></span>A buyer signs a long-term contract</button>
+          <button class="sw" type="button"><span class="sw__k"></span>We can make and ship it at a profit</button>
+          <button class="sw" type="button"><span class="sw__k"></span>We can prove it cuts emissions (slide 30)</button>
         </div>
         <div class="meter" id="meter" style="grid-template-columns:repeat(3,1fr)"><i></i><i></i><i></i></div>
-        <div class="gstat" id="swStat"><i></i><span id="swT">0 / 3 in place · keep at 5 points</span></div>
+        <div class="gstat" id="swStat"><i></i><span id="swT">0 / 3 ready · stay at 5 points</span></div>
       </div>
     </div>
   </div></div>
 </section>
 
-<!-- ========== 7 · STRATEGIC FIT + ADVANTAGE ========== -->
-<section class="slide" id="s-fit" data-chapter="4">
+<!-- ========== 6 · HOW DOES THE PORTFOLIO MEET VIETNAM'S NEEDS? ========== -->
+<section class="slide" id="s-needs" data-chapter="5">
   <div class="slide-content"><div class="wrap">
     <div class="head-center">
-      <div class="eyebrow ac-reveal">Strategic fit</div>
-      <h2 class="s-title ac-reveal" style="--i:1">What Vietnam needs, <span class="neo">what PetroVietnam already has</span></h2>
+      <div class="qeb ac-reveal">Question 5</div>
+      <h2 class="s-title ac-reveal" style="--i:1">How does the portfolio support energy security while reducing emissions?</h2>
     </div>
-    <div class="fitg">
-      <div class="fitc">
-        <div class="fitc__h ac-reveal" style="--i:2"><i style="background:var(--pvep-blue)"></i>Vietnam’s needs</div>
-        <div class="frow ac-reveal" style="--i:3"><div class="frow__t">Energy security <em style="background:var(--pvep-navy)">35</em><em style="background:var(--pvep-blue)">20</em></div>
-          <p>Keep domestic oil and gas supply and existing facilities working well. Add new power supply.</p>
-          <p class="src">Course: why a country needs reliable supply, and why companies avoid projects that may lose value as demand changes.</p></div>
-        <div class="frow ac-reveal" style="--i:4"><div class="frow__t">Reliable and affordable energy</div>
-          <p>Save energy and combine gas power, renewables and storage. Choose projects with reasonable costs, reliable supply and grid access.</p>
-          <p class="src">Lesson 2.2: consider the value of electricity and system reliability, not only production cost.</p></div>
-        <div class="frow ac-reveal" style="--i:5"><div class="frow__t">Emissions reduction <em style="background:var(--pvep-green)">10</em><em style="background:var(--info)">15</em></div>
-          <p>10 points to save energy and cut methane. 15 points for selected CO₂ capture and storage. Renewable power also lowers emissions.</p>
-          <p class="src">MACC: some measures cut both costs and emissions. CCUS cases: CO₂ is easier to capture from some sources.</p></div>
+    <div class="goal3">
+      <div class="panel panel--top ac-reveal" style="--i:2">
+        <div class="panel__k">Energy security</div>
+        <div class="pchips"><em style="background:var(--pvep-navy)">Oil &amp; gas 35</em><em style="background:var(--pvep-blue)">Power 20</em></div>
+        <p>Maintain domestic oil and gas supply and invest in reliable power. For Block B–O Mon, align gas production, pipeline and power plant schedules so the gas can reach its buyers.</p>
+        <p><b>Sovereignty:</b> Petrovietnam says its offshore oil and gas work also helps affirm Vietnam’s maritime sovereignty (Dec 2025).</p>
       </div>
-      <div class="fitc">
-        <div class="fitc__h ac-reveal" style="--i:2"><i style="background:var(--pvep-green)"></i>PetroVietnam’s strengths</div>
-        <div class="frow ac-reveal" style="--i:3"><div class="frow__t">Knowledge of fields and reservoirs</div>
-          <p>Improve oil and gas production and find suitable places to store CO₂.</p>
-          <p class="gap">Better data and monitoring to show stored CO₂ stays underground.</p></div>
-        <div class="frow ac-reveal" style="--i:4"><div class="frow__t">Offshore experience and large-project skills</div>
-          <p>Build offshore wind and energy facilities. Sell offshore services to other companies.</p>
-          <p class="gap">More experience with renewable-project costs and new customers.</p></div>
-        <div class="frow ac-reveal" style="--i:5"><div class="frow__t">Gas facilities and industrial customers</div>
-          <p>Support gas power, energy trading and energy services for businesses.</p>
-          <p class="gap">Some facilities may need changes. New services must meet customer needs and earn a profit.</p></div>
+      <div class="panel panel--top ac-reveal" style="--i:3">
+        <div class="panel__k">Reliable and affordable energy</div>
+        <div class="pchips"><em style="background:var(--pvep-blue)">Power 20</em><em style="background:var(--pvep-green)">Efficiency 10</em></div>
+        <p>Choose power projects based on total cost and when the grid needs their electricity. Improve energy efficiency to reduce fuel use and operating costs. Check LNG prices and expected running hours before investing further.</p>
       </div>
+      <div class="panel panel--top ac-reveal" style="--i:4">
+        <div class="panel__k panel__k--g">Emissions reduction</div>
+        <div class="pchips"><em style="background:var(--pvep-green)">Efficiency 10</em><em style="background:var(--info)">CCUS 15</em></div>
+        <p>Reduce energy use, repair methane leaks and reduce routine gas flaring. Start with practical measures that deliver verified reductions at low cost. Study CCUS where a suitable CO₂ source and safe storage can be confirmed.</p>
+        <p><b>Example:</b> PVFCCo’s cooling-water and compressor work saves about 10 million kWh a year.</p>
+      </div>
+    </div>
+    <div class="prow ac-reveal" style="--i:5; margin-top:var(--gap)"><div class="prow__k prow__k--g">CO₂ use is different from permanent storage</div>
+      <div class="prow__v"><span>Phu My uses captured CO₂ to make urea. This is CO₂ <b>use</b>, not permanent underground <b>storage</b>.</span>
+        <span>For our CCUS proposal, we must confirm the available CO₂, a safe storage site, total costs and who will pay.</span></div></div>
+  </div></div>
+</section>
+
+<!-- ========== 7 · ADVANTAGE AND GAPS ========== -->
+<section class="slide" id="s-cap" data-chapter="6">
+  <div class="slide-content"><div class="wrap">
+    <div class="head-center">
+      <div class="qeb ac-reveal">Question 6</div>
+      <h2 class="s-title ac-reveal" style="--i:1">Which PetroVietnam capabilities create an advantage, and what is missing?</h2>
+    </div>
+    <div class="t4 t4--cap ac-reveal" style="--i:2">
+      <div class="h">Capability</div><div class="h">Real example</div><div class="h">Investment relevance</div><div class="h">Capability gap</div>
+      <div class="k">Knowing what is underground</div><div>PQPOC, a Petrovietnam operating company, runs the Block B field development. PVEP is one of the owners.</div><div>Oil &amp; gas 35. Finding places to store CO₂ (CCUS 15).</div><div class="g">We still need to find and test CO₂ storage sites.</div>
+      <div class="k">Gas pipelines, terminals and power plants</div><div>PV GAS: Thi Vai LNG terminal and the Block B pipeline. PV Power: Nhon Trach 3 &amp; 4.</div><div>Power 20. Oil &amp; gas 35.</div><div class="g">LNG prices and running hours can change. No solar, wind or battery example here.</div>
+      <div class="k">Building large offshore structures</div><div>PTSC built 33 wind turbine foundations for Greater Changhua 2b &amp; 4 (handed over June 2025). With Semco Maritime, PTSC M&amp;C built two offshore substations for Hai Long 2 &amp; 3.</div><div>New services 15. Vietnam plans about 6,000–17,032 MW of offshore wind for 2030–2035 (revised Power Plan 8, 2025).</div><div class="g">Profit from these jobs still needs checking. PTSC was the builder, not the owner.</div>
+      <div class="k">Close ties with the Government</div><div>The Prime Minister gave Petrovietnam O Mon 3 &amp; 4 to keep the gas-to-power chain in step (2023). Petrovietnam’s mission includes energy security, national defence and maritime sovereignty (Dec 2025).</div><div>Oil &amp; gas 35. Power 20. Easier support for national projects.</div><div class="g">Some state-assigned tasks may not make money. Each project still needs its own business check.</div>
+    </div>
+    <div class="notes2">
+      <div class="prow ac-reveal" style="--i:3; grid-template-columns:1fr"><div class="prow__v"><span><b>Building parts is not owning a wind farm.</b> A builder is paid for the job. An owner waits many years for its money and takes the risk on power prices, wind and the grid.</span></div></div>
+      <div class="prow ac-reveal" style="--i:4; grid-template-columns:1fr"><div class="prow__v"><span><b>CO₂ services are a different business.</b> They need customers, a ready storage site and a clear price. PTSC’s wind work does not prove these exist.</span></div></div>
     </div>
   </div></div>
 </section>
 
-<!-- ========== 8 · ASSUMPTIONS ========== -->
-<section class="slide" id="s-asm" data-chapter="5">
+<!-- ========== 8 · ASSUMPTIONS AND RISKS ========== -->
+<section class="slide" id="s-risk" data-chapter="7">
   <div class="slide-content"><div class="wrap">
     <div class="head-center">
-      <div class="eyebrow ac-reveal">Assumptions and risks</div>
-      <h2 class="s-title ac-reveal" style="--i:1">Three assumptions, each with a <span class="neo">decision trigger</span></h2>
+      <div class="qeb ac-reveal">Question 7</div>
+      <h2 class="s-title ac-reveal" style="--i:1">Which assumptions matter most, and what could cause the strategy to fail?</h2>
     </div>
-    <div class="g3">
-      <div class="panel panel--top asm ac-reveal" style="--i:2">
-        <div class="asm__n">01</div>
-        <div class="asm__t">Vietnam still needs domestic oil and gas through 2035</div>
-        <div class="asm__box asm__box--b"><b>Basis</b>Existing fields and gas facilities can supply energy and earn cash.</div>
-        <div class="asm__box asm__box--r"><b>What could go wrong</b>Demand falls faster than expected, imports become cheaper or emissions costs rise.</div>
-        <div class="asm__box asm__box--t"><b>Decision trigger</b>Check demand, import prices, emissions costs and expected returns before approving new projects.</div>
-      </div>
-      <div class="panel panel--top asm ac-reveal" style="--i:3">
-        <div class="asm__n">02</div>
-        <div class="asm__t">New power projects have customers and grid access</div>
-        <div class="asm__box asm__box--b"><b>Basis</b>Power receives 20 points. PetroVietnam can use its gas and offshore experience.</div>
-        <div class="asm__box asm__box--r"><b>What could go wrong</b>The grid cannot accept the power, buyers are missing or the plant runs less than expected.</div>
-        <div class="asm__box asm__box--t"><b>Decision trigger</b>Confirm grid access, buyers and expected income before investing heavily.</div>
-      </div>
-      <div class="panel panel--top asm ac-reveal" style="--i:4">
-        <div class="asm__n">03</div>
-        <div class="asm__t">CCUS and new services can earn enough revenue</div>
-        <div class="asm__box asm__box--b"><b>Basis</b>15 points each. Useful reservoir, offshore and customer experience.</div>
-        <div class="asm__box asm__box--r"><b>What could go wrong</b>CO₂ storage is not proven, nobody pays for CCUS or customers do not buy the new services.</div>
-        <div class="asm__box asm__box--t"><b>Decision trigger</b>Prove safe storage and agree who pays. Test customer demand and profit before expanding services.</div>
-      </div>
+    <div class="t4 t4--risk ac-reveal" style="--i:2">
+      <div class="h">Assumption</div><div class="h">What we know</div><div class="h">What could go wrong</div><div class="h">Our response</div>
+      <div class="k">The Block B–O Mon chain stays on schedule</div><div>First gas is targeted for Q3 2027. O Mon IV is planned for December 2028 and O Mon III for May 2030. These dates may change.</div><div>Some plants may not be ready to use the gas, delaying sales and revenue.</div><div class="r">Align the field, pipeline and power plant schedules. Check expected gas demand before committing more funds.</div>
+      <div class="k">LNG power earns enough to cover its costs</div><div>Nhon Trach 3 &amp; 4 are in commercial operation. PV GAS has a 25-year LNG supply contract with PV Power. This does not guarantee profit.</div><div>High LNG prices or fewer running hours may reduce profit.</div><div class="r">Test whether power revenue covers fuel, operating and capital costs, including when LNG prices rise or running hours fall.</div>
+      <div class="k">Our CCUS proposal has a suitable CO₂ source, storage site and funding</div><div>Phu My uses captured CO₂ to make urea. For our CCUS proposal, the available CO₂, storage site and funding still need to be checked.</div><div>Too little suitable CO₂, high costs or no funding may make the project unviable.</div><div class="r">Fund studies first. Commit to construction only after confirming the CO₂ source, safe storage, costs and who will pay.</div>
+      <div class="k">New service contracts make a profit</div><div>PTSC has delivered offshore wind foundations and substations. We still need evidence of profit from these contracts.</div><div>Costs may exceed the contract price, or too many jobs may overload the yard.</div><div class="r">Check contract profit and yard capacity before expanding. Select jobs with realistic costs and schedules.</div>
     </div>
   </div></div>
 </section>
 
 <!-- ========== 9 · COURSE EVIDENCE ========== -->
-<section class="slide" id="s-ev" data-chapter="5">
+<section class="slide" id="s-ev" data-chapter="8">
   <div class="slide-content"><div class="wrap">
     <div class="head-center">
-      <div class="eyebrow ac-reveal">Course evidence used</div>
-      <h2 class="s-title ac-reveal" style="--i:1">Each allocation traces back to <span class="neo">a lesson</span></h2>
+      <div class="qeb ac-reveal">Question 8</div>
+      <h2 class="s-title ac-reveal" style="--i:1">What evidence from the course supports our conclusions?</h2>
     </div>
     <div class="evl">
-      <div class="evr ac-reveal ac-reveal--left" style="--i:2"><div class="evr__l">L3.2 · Transition impact on reserves<small>Slides 16, 18, 22</small></div><div class="evr__f">Demand continues, but some fields cannot make money because of costs, market limits or missing infrastructure.</div><span class="evr__p" style="background:var(--pvep-navy)">Oil &amp; gas 35</span></div>
-      <div class="evr ac-reveal ac-reveal--left" style="--i:3"><div class="evr__l">L4.1 · Decarbonize energy sources<small>Pages 3-5, 7 · MACC</small></div><div class="evr__f">MACC ranks measures by cost per tonne reduced. Start with the most cost-effective: energy savings, methane leak repairs, less flaring.</div><span class="evr__p" style="background:var(--pvep-green)">Emissions 10</span></div>
-      <div class="evr ac-reveal ac-reveal--left" style="--i:4"><div class="evr__l">L2.2 · Electrification &amp; renewables<small>Pages 14-15, 29 · LCOE</small></div><div class="evr__f">LCOE compares generation costs but does not show timing, reliability, storage or grid access.</div><span class="evr__p" style="background:var(--pvep-blue)">Power 20</span></div>
-      <div class="evr ac-reveal ac-reveal--left" style="--i:5"><div class="evr__l">L3.1 · CCUS<small>Slides 8-9, 20, 31</small></div><div class="evr__f">Concentrated CO₂ is easier to capture. Transport, storage, monitoring and who pays also matter. Start with gas processing or ammonia plants.</div><span class="evr__p" style="background:var(--info)">CCUS 15</span></div>
-      <div class="evr ac-reveal ac-reveal--left" style="--i:6"><div class="evr__l">L3.3 · Hydrogen and ammonia<small>Slides 14, 19, 30</small></div><div class="evr__f">Policy support does not guarantee sales. Projects need buyers who will pay and costs that make sense.</div><span class="evr__p" style="background:var(--caution)">Hydrogen 5</span></div>
-      <div class="evr ac-reveal ac-reveal--left" style="--i:7"><div class="evr__l">L4.2 · Competitive advantage in alternative energy<small>Pages 8, 22, 33-34</small></div><div class="evr__f">Reservoir, infrastructure and trading skills can support new businesses, but each opportunity must fit the company and customer.</div><span class="evr__p" style="background:#0f766e">Services 15</span></div>
-      <div class="evr evr--rule ac-reveal ac-reveal--left" style="--i:8"><div class="evr__l">L5 · Commitment, affordability, funding<small>Page 37</small></div><div class="evr__f"><b>Our rule across the portfolio:</b> commitment, affordable costs and finance must come together. Check costs, buyers and funding before committing more money.</div><span class="evr__p" style="background:linear-gradient(135deg,var(--pvep-blue),var(--pvep-green))">All 100</span></div>
+      <div class="evr ac-reveal ac-reveal--left" style="--i:2"><div class="evr__l">3.2 Reserves and production<small>Slides 16, 18, 22</small></div><div class="evr__f">People still need oil and gas, but a field fails without a pipeline or a buyer.</div><span class="evr__p" style="background:var(--pvep-navy)">35, chosen projects</span></div>
+      <div class="evr ac-reveal ac-reveal--left" style="--i:3"><div class="evr__l">4.1 Decarbonize energy sources<small>Slides 3, 5, 7</small></div><div class="evr__f">Do the cheapest emission cuts first. Fix methane leaks. Burn off less gas.</div><span class="evr__p" style="background:var(--pvep-green)">10, cheap cuts</span></div>
+      <div class="evr ac-reveal ac-reveal--left" style="--i:4"><div class="evr__l">2.2 Electrification and renewables<small>Slides 14, 15, 29</small></div><div class="evr__f">A low cost on paper does not show when power is needed or if the grid can take it.</div><span class="evr__p" style="background:var(--pvep-blue)">20, checked first</span></div>
+      <div class="evr ac-reveal ac-reveal--left" style="--i:5"><div class="evr__l">4.2 Competitive advantage<small>Slides 22, 33, 34</small></div><div class="evr__f">Gas power needs fuel and buyers. Only enter businesses where our skills help.</div><span class="evr__p" style="background:#0f766e">20 and 15</span></div>
+      <div class="evr ac-reveal ac-reveal--left" style="--i:6"><div class="evr__l">3.1 CCUS<small>Slides 8–9, 12, 20, 31</small></div><div class="evr__f">Pure CO₂ is cheaper to catch. A storage site and a payer decide if a project works.</div><span class="evr__p" style="background:var(--info)">15, study first</span></div>
+      <div class="evr ac-reveal ac-reveal--left" style="--i:7"><div class="evr__l">3.3 Hydrogen and ammonia<small>Slides 14, 19, 30</small></div><div class="evr__f">Government support does not create buyers. We need customers who pay.</div><span class="evr__p" style="background:var(--caution)">Only 5</span></div>
+      <div class="evr ac-reveal ac-reveal--left" style="--i:8"><div class="evr__l">Assignment 6 · PVFCCo case<small>Slides 6, 8</small></div><div class="evr__f">Efficiency projects already save energy and money. The 2030 emissions target is still small (3% vs 2022).</div><span class="evr__p" style="background:var(--pvep-green)">10, proven cuts</span></div>
+      <div class="evr evr--rule ac-reveal ac-reveal--left" style="--i:8"><div class="evr__l">5 Three drivers of success<small>Slide 37</small></div><div class="evr__f">Each project needs commitment, a fair cost and the money to pay for it.</div><span class="evr__p" style="background:linear-gradient(135deg,var(--pvep-blue),var(--pvep-green))">Rule for all</span></div>
     </div>
   </div></div>
 </section>
 
-<!-- ========== 10 · CLOSING (algorithmic flow field) ========== -->
-<section class="slide" id="s-close" data-chapter="6" data-hero="1">
+<!-- ========== 10 · WHAT WOULD CHANGE THE ALLOCATION? ========== -->
+<section class="slide" id="s-change" data-chapter="9" data-hero="1">
   <div class="video-bg-wrap" aria-hidden="true"></div>
   <canvas class="flowfield" id="flowfield" aria-hidden="true"></canvas>
-  <div class="slide-content"><div class="wrap" style="text-align:center">
-    <div class="hero__eb ac-reveal" style="--i:0; margin-bottom:clamp(1rem,3vh,2rem)">One rule across the portfolio</div>
-    <p class="close__line ac-reveal" style="--i:1">Check costs, buyers and funding <b>before committing more money</b>.</p>
-    <div class="hero__by ac-reveal" style="--i:3">
-      <span class="hero__chip"><b>35</b> Oil &amp; gas</span><span class="hero__chip"><b>20</b> Power</span><span class="hero__chip"><b>15</b> CCUS</span><span class="hero__chip"><b>15</b> New services</span><span class="hero__chip"><b>10</b> Operating emissions</span><span class="hero__chip"><b>5</b> Hydrogen</span>
+  <div class="slide-content"><div class="wrap">
+    <div class="hero__eb ac-reveal" style="--i:0; text-align:center; margin-bottom:clamp(.7rem,2vh,1.3rem)">Question 4 · Final decision and first actions</div>
+    <div class="glass3">
+      <div class="glass ac-reveal" style="--i:1">
+        <h3>We change points when</h3>
+        <ul>
+          <li><b>Efficiency ↑</b> if projects really save money.</li>
+          <li><b>CCUS ↑ or ↓</b> once we know the CO₂ source, site and payer.</li>
+          <li><b>Hydrogen ↑</b> if a buyer signs and the cost works.</li>
+          <li><b>Oil &amp; gas ↓</b> if delays stop the chain.</li>
+          <li><b>Services ↓</b> if new jobs make little profit.</li>
+        </ul>
+      </div>
+      <div class="glass ac-reveal" style="--i:2">
+        <h3>Example scenario</h3>
+        <div class="scn">
+          <span class="h">If CCUS finds no storage site or payer, and methane work saves money</span><span class="h">Now</span><span class="h"></span><span class="h">New</span>
+          <span>CCUS</span><b>15</b><span class="dn">−5</span><b>10</b>
+          <span>Efficiency, methane</span><b>10</b><span class="up">+5</span><b>15</b>
+          <span>Other four areas</span><b>75</b><span></span><b>75</b>
+          <span><b>Total</b></span><b>100</b><span></span><b>100</b>
+        </div>
+        <ul><li>Points go to work that has already shown results.</li></ul>
+      </div>
+      <div class="glass ac-reveal" style="--i:3">
+        <h3>First actions</h3>
+        <ul>
+          <li>Check dates and buyers for each part of Block B–O Mon.</li>
+          <li>Measure methane leaks and flaring at our sites.</li>
+          <li>Start the CO₂ and storage study at Phu My.</li>
+          <li>Check how much PTSC earned on its wind jobs.</li>
+        </ul>
+      </div>
     </div>
-    <div class="close__ty ac-reveal ac-reveal--zoom" style="--i:5">Thank you</div>
-    <div class="hero__sub ac-reveal" style="--i:6">Questions · 2 minutes</div>
+    <p class="final-line ac-reveal" style="--i:5">Fund oil and gas where the whole chain is ready. Grow power and services we can deliver. <b>Move points when the facts change.</b></p>
   </div></div>
 </section>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-/* ===== shared data: the 100-point allocation (Word: Team portfolio allocation) ===== */
+/* ===== shared data: team allocation (categories as in the assignment template; not official strategy) ===== */
 var ALLOC=[
-  {s:"Existing oil & gas",t:"Existing oil & gas production and infrastructure",p:35,c:"#0A2A4A",lc:"#9CC3E6",w:"Vietnam still needs oil and gas. We would improve existing fields and pipelines, and use their cash to fund new energy projects."},
-  {s:"Efficiency & methane",t:"Energy efficiency, methane reduction & operational electrification",p:10,c:"#00B050",lc:"#7FE0A8",w:"Fix methane leaks and save energy first. These measures can cut costs and emissions. Check power supply and total cost before switching equipment to electricity."},
-  {s:"Power & storage",t:"Power generation, renewables & energy storage",p:20,c:"#0083C7",lc:"#4FC3F7",w:"Vietnam needs more electricity. Use our gas and offshore experience, and check buyers, grid access and expected income before investing."},
-  {s:"CCUS",t:"Carbon capture, utilization & storage",p:15,c:"#1D4ED8",lc:"#8EA2FF",w:"Start with CO₂ from gas processing and fertiliser plants. Before building: suitable storage, a clear transport plan and someone who pays for the full process."},
-  {s:"Hydrogen & ammonia",t:"Hydrogen, ammonia & other low-carbon fuels",p:5,c:"#D97706",lc:"#FFB547",w:"Keep hydrogen small for now. Fund trials with interested customers, then invest more when costs, buyers and expected returns are clearer."},
-  {s:"New services",t:"New services & business models",p:15,c:"#0f766e",lc:"#5EEAD4",w:"Test offshore services, CO₂ storage services and energy solutions for businesses, using skills we already have. Expand when customers and profit are clear."}
+  {s:"Existing oil and gas production and infrastructure",o:"Oil & gas",p:35,c:"#0A2A4A",lc:"#9CC3E6",r:"Vietnam still needs oil and gas. We fund chosen projects, like Block B–O Mon, and use the cash for new energy."},
+  {s:"Energy efficiency, methane reduction and operational electrification",o:"Efficiency",p:10,c:"#00B050",lc:"#7FE0A8",r:"We fix methane leaks, cut flaring and save energy first. This cuts cost and emissions. We add more if savings are proven."},
+  {s:"Power generation, renewables and energy storage",o:"Power",p:20,c:"#0083C7",lc:"#4FC3F7",r:"Power comes second. PV GAS supplies LNG to PV Power’s Nhon Trach 3 &amp; 4. We check fuel, buyers and grid access before investing."},
+  {s:"Carbon capture, utilization and storage",o:"CCUS",p:15,c:"#1D4ED8",lc:"#8EA2FF",r:"Fertilizer plants give pure CO₂, so we start by checking sources like Phu My. Before building, we need storage, transport and someone who pays."},
+  {s:"Hydrogen, ammonia and other low-carbon fuels",o:"Hydrogen",p:5,c:"#D97706",lc:"#FFB547",r:"We keep hydrogen small. We fund trials with interested buyers, and invest more when costs and buyers are clear."},
+  {s:"New services and business models",o:"Services",p:15,c:"#0f766e",lc:"#5EEAD4",r:"PTSC has already built offshore wind foundations and substations. We grow services like these when customers and profit are clear."}
 ];
-/* seeded PRNG (mulberry32) so every run of the art is reproducible */
 function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
 var REDUCED=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+</script>
+<script>
 /* ===== reveal-on-enter + count-up ===== */
 (function(){
   var SEL=".slide", RATIO=.5;
@@ -925,32 +981,12 @@ var REDUCED=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduc
   window.addEventListener("beforeprint",revealAll);
 })();
 
-/* ===== speaker notes: Word "Eight-minute report-out" ===== */
-var NOTES={
-  "s-hero":{t:"Opening",n:["<span class='muted'>Introduce the team and the question: where should PetroVietnam invest through 2035? The 100 dots are the 100 points.</span>"]},
-  "s-rec":{t:"One-sentence recommendation",n:["“We recommend keeping oil and gas strong enough to supply Vietnam and earn cash, then using that cash to build power projects, develop selected CO₂ storage projects and grow new services, while cutting operating emissions and testing hydrogen on a small scale.”"]},
-  "s-pf":{t:"1 · Allocation",time:"1 min",n:["“Our allocation is 35 for oil and gas, 10 for operating emissions cuts, 20 for power, 15 for CCUS, 5 for hydrogen and 15 for new services.","We want the existing business to supply energy and earn the cash for our next investments.”"]},
-  "s-p1":{t:"2 · Two priorities (part 1)",time:"1.5 min (both slides)",n:["“Oil and gas comes first because Vietnam still needs the supply and PetroVietnam knows these assets.”"]},
-  "s-p2":{t:"2 · Two priorities (part 2)",time:"continued",n:["“Power comes second because Vietnam needs more reliable electricity. We can build on our gas facilities and offshore experience.”"]},
-  "s-h2":{t:"3 + 4 · What we hold back, what changes our view",time:"0.75 + 0.75 min",n:["“We would hold back on large green hydrogen export plants. We still need clearer power costs, transport costs and buyers. We would use the 5 points to learn through smaller projects.”","“We would change our view if buyers sign long-term contracts and the full project costs leave a reasonable return. We also need agreed product standards.”"]},
-  "s-fit":{t:"5 + 6 · Vietnam impact, PetroVietnam advantage",time:"1 + 1 min",n:["“We would keep domestic supply working, add reliable power and cut emissions from current operations. We would start with energy savings and methane leaks, then develop CO₂ storage where the full process makes sense.”","“PetroVietnam knows reservoirs, offshore operations and large projects. It also has gas facilities and industrial customers. We would use those strengths, while building the new skills needed for storage monitoring, renewables and customer services.”"]},
-  "s-asm":{t:"7 · Main questions",time:"1 min",n:["“Our main questions are whether oil and gas stays competitive, whether new power can reach buyers, and whether CCUS and services can earn enough income. We would check these before each major investment.”"]},
-  "s-ev":{t:"8 · Course evidence",time:"1 min",n:["“MACC helped us choose practical emissions cuts. Lesson 2.2 reminded us to check power value as well as cost. The CCUS cases helped us choose easier CO₂ sources. The transition-risk lessons reminded us to review long-term demand.”"]},
-  "s-close":{t:"Q&A",time:"2 min",n:["<span class='muted'>Be prepared to explain allocations or assumptions during the two-minute question period.</span>"]}
-};
-
 /* ===== deck controller ===== */
 (function(){
   var slides=[].slice.call(document.querySelectorAll(".slide")),total=slides.length,
       rail=[].slice.call(document.querySelectorAll(".rail__item")),
       curEl=document.getElementById("cur"),fill=document.getElementById("progressFill"),current=0;
   document.getElementById("tot").textContent=total;document.getElementById("footTot").textContent=total;
-  var notes=document.getElementById("notes"),nbtn=document.getElementById("nbtn");
-  function renderNotes(){var s=slides[current],d=NOTES[s.id];if(!d){document.getElementById("notesB").innerHTML="";return;}
-    document.getElementById("notesT").textContent=d.t;document.getElementById("notesTime").textContent=d.time||"";
-    document.getElementById("notesB").innerHTML=d.n.map(function(p){return "<p>"+p+"</p>";}).join("");}
-  function toggleNotes(){notes.classList.toggle("open");nbtn.classList.toggle("on");renderNotes();}
-  nbtn.addEventListener("click",toggleNotes);
   function setC(i){current=Math.max(0,Math.min(total-1,i));curEl.textContent=current+1;
     fill.style.width=((current+1)/total*100)+"%";document.getElementById("footPage").textContent=current+1;
     var ch=slides[current].getAttribute("data-chapter");
@@ -961,13 +997,12 @@ var NOTES={
         else{ni=slides.findIndex(function(s,j){return j>gi&&s.getAttribute("data-chapter")!==el.getAttribute("data-chapter");});if(ni<0)ni=Infinity;}
         el.classList.toggle("is-active",gi>=0&&current>=gi&&current<ni);
       }else el.classList.toggle("is-active",el.getAttribute("data-chapter")===ch);});
-    if(notes.classList.contains("open"))renderNotes();}
+  }
   function go(i){var t=Math.max(0,Math.min(total-1,i));slides[t].scrollIntoView({behavior:"smooth",block:"start"});setC(t);}
   var io2=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting&&e.intersectionRatio>=.55){var i=slides.indexOf(e.target);if(i>=0)setC(i);}});},{threshold:[.55]});
   slides.forEach(function(s){io2.observe(s);});
   document.addEventListener("keydown",function(e){
     var tg=e.target&&e.target.tagName;
-    if(e.key==="n"||e.key==="N"){toggleNotes();return;}
     if(["ArrowRight","ArrowDown","PageDown"].indexOf(e.key)!==-1||(e.key===" "&&tg!=="BUTTON")){e.preventDefault();go(current+1);}
     else if(["ArrowLeft","ArrowUp","PageUp"].indexOf(e.key)!==-1){e.preventDefault();go(current-1);}
     else if(e.key==="Home"){e.preventDefault();go(0);}
@@ -1005,7 +1040,7 @@ var NOTES={
       var start=new THREE.Vector3((rnd()-.5)*12,(rnd()-.5)*9,(rnd()-.5)*8);
       m.userData={a:a,start:start,delay:idx*.012+rnd()*.25,wob:rnd()*Math.PI*2};
       m.position.copy(start);group.add(m);dots.push(m);idx++;}
-    labels.push({a:a0+span/2,txt:d.p+" "+d.s});a0+=span;});
+    labels.push({a:a0+span/2,txt:d.p+" "+(d.o||d.s)});a0+=span;});
   var lblEls=labels.map(function(l){var e=document.createElement("div");e.className="orbit__lbl";e.textContent=l.txt;host.appendChild(e);return e;});
   function size(){var w=host.clientWidth||400;renderer.setSize(w,w,false);camera.aspect=1;camera.updateProjectionMatrix();}
   size();window.addEventListener("resize",size);
@@ -1032,7 +1067,7 @@ var NOTES={
   window.addEventListener("beforeprint",function(){stop();t0=clock.getElapsedTime()-10;frame();});
 })();
 
-/* ===== S3 portfolio donut ===== */
+/* ===== S2 donut + six allocation rows (all reasons visible) ===== */
 (function(){
   var D=ALLOC,svg=document.getElementById("donutSvg"),list=document.getElementById("pfList"),donut=document.getElementById("donut");if(!svg)return;
   var R=46,C=2*Math.PI*R,GAP=.9,acc=0,ns="http://www.w3.org/2000/svg",segs=[],items=[];
@@ -1040,18 +1075,16 @@ var NOTES={
     var len=d.p/100*C,c=document.createElementNS(ns,"circle");
     c.setAttribute("cx",60);c.setAttribute("cy",60);c.setAttribute("r",R);c.setAttribute("class","seg");c.setAttribute("stroke",d.c);
     c.dataset.len=(len-GAP).toFixed(2);c.setAttribute("stroke-dasharray","0 "+C);c.setAttribute("stroke-dashoffset",(-acc).toFixed(2));
-    c.addEventListener("mouseenter",function(){sel(i);});c.addEventListener("click",function(){sel(i);});
+    c.addEventListener("mouseenter",function(){sel(i);});c.addEventListener("mouseleave",clr);
     svg.appendChild(c);segs.push(c);acc+=len;
-    var b=document.createElement("button");b.type="button";b.className="pfi ac-reveal";b.style.setProperty("--i",3+i*.5);
-    b.innerHTML='<i style="background:'+d.c+'"></i><span>'+d.s.replace("&","&amp;")+'</span><b>'+d.p+'</b>';
-    b.addEventListener("mouseenter",function(){sel(i);});b.addEventListener("click",function(){sel(i);});
+    var b=document.createElement("button");b.type="button";b.className="arow ac-reveal";b.style.setProperty("--i",3+i*.4);b.style.setProperty("--c",d.c);
+    b.innerHTML='<b>'+d.p+'</b><div><span>'+d.s+'</span><small>'+d.r+'</small></div>';
+    b.addEventListener("mouseenter",function(){sel(i);});b.addEventListener("mouseleave",clr);b.addEventListener("focus",function(){sel(i);});b.addEventListener("blur",clr);
     list.appendChild(b);items.push(b);
   });
   function draw(on){segs.forEach(function(c,i){setTimeout(function(){c.setAttribute("stroke-dasharray",on?(c.dataset.len+" "+C):("0 "+C));},on?i*120+250:0);});}
-  function sel(i){var d=D[i];donut.classList.add("has-on");segs.forEach(function(c,j){c.classList.toggle("on",j===i);});items.forEach(function(b,j){b.classList.toggle("on",j===i);});
-    var n=document.getElementById("pfN");n.textContent=d.p;n.style.color=d.c;document.getElementById("pfT").textContent=d.t;document.getElementById("pfW").textContent=d.w;
-    var det=document.getElementById("pfDetail");det.classList.remove("flash");void det.offsetWidth;det.classList.add("flash");}
-  sel(0);
+  function sel(i){donut.classList.add("has-on");segs.forEach(function(c,j){c.classList.toggle("on",j===i);});items.forEach(function(b,j){b.classList.toggle("on",j===i);});}
+  function clr(){donut.classList.remove("has-on");segs.forEach(function(c){c.classList.remove("on");});items.forEach(function(b){b.classList.remove("on");});}
   var sl=svg.closest(".slide");
   new IntersectionObserver(function(es){es.forEach(function(e){draw(e.isIntersecting&&e.intersectionRatio>=.5);});},{threshold:[0,.5]}).observe(sl);
   window.addEventListener("beforeprint",function(){segs.forEach(function(c){c.setAttribute("stroke-dasharray",c.dataset.len+" "+C);});});
@@ -1061,7 +1094,7 @@ var NOTES={
 (function(){var sw=[].slice.call(document.querySelectorAll("#swList .sw")),m=[].slice.call(document.querySelectorAll("#meter i")),st=document.getElementById("swStat");if(!st)return;
   function upd(){var n=sw.filter(function(s){return s.classList.contains("on");}).length;
     m.forEach(function(x,i){x.classList.toggle("on",i<n);});st.classList.toggle("go",n===sw.length);
-    document.getElementById("swT").textContent=n===sw.length?"3 / 3 in place · reconsider a larger hydrogen investment":n+" / 3 in place · keep at 5 points";}
+    document.getElementById("swT").textContent=n===sw.length?"3 / 3 ready · time to add more points":n+" / 3 ready · stay at 5 points";}
   sw.forEach(function(s){s.addEventListener("click",function(){s.classList.toggle("on");upd();});});})();
 
 /* ===== S10 · algorithmic-art flow field, seed 2035 =====
